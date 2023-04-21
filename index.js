@@ -1,5 +1,13 @@
 const { Client, GatewayIntentBits } = require(`discord.js`)
 require('dotenv').config()
+const express = require(`express`)
+const app = express()
+
+app.get(`/`, (req,res)=>{
+    res.sendStatus(200)
+})
+
+
 var initialCommand = `!`
 const helpMenu = `
 normal -- shows current/next map and time remaining for normal game modes. 
@@ -82,3 +90,6 @@ client.on(`messageCreate`, (message) => {
 })
 
 client.login(process.env.DISCORD_TOKEN)
+app.listen(process.env.PORT || 3001, ()=>{
+    console.log(`Listening on PORT:${process.env.PORT}`)
+})
