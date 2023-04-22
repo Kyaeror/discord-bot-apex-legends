@@ -2,7 +2,7 @@ const { Client, GatewayIntentBits } = require(`discord.js`)
 require('dotenv').config()
 const express = require(`express`)
 const app = express()
-const fetch = require('node-fetch')
+// import fetch from "node-fetch"
 
 app.get(`/`, (req,res)=>{
     res.sendStatus(200)
