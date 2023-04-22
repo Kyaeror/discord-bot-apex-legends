@@ -94,7 +94,7 @@ client.on(`messageCreate`, async (message) => {
 
 
 
-
+            //weather controller
             if(message.content.endsWith(`weather`)){
                 message.reply(`What city were you looking for?`)
                     .then(()=> {
