@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits } = require(`discord.js`)
 require('dotenv').config()
 const express = require(`express`)
 const app = express()
+const fetch = require('node-fetch')
 
 app.get(`/`, (req,res)=>{
     res.sendStatus(200)
@@ -103,8 +104,7 @@ client.on(`messageCreate`, async (message) => {
                             time: 60000
                         })
                         collector.on(`collect`, (message)=>{
-                            
-                                fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${message.content}&limit=1&appid=${process.env.WEATHER_API_KEY}`)
+                            fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${message.content}&limit=1&appid=${process.env.WEATHER_API_KEY}`)
                                     .then(res => res.json())
                                     .then((data)=>{
                                         const lat = data[0].lat
