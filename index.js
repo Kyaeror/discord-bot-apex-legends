@@ -13,6 +13,7 @@ const helpMenu = `
 normal -- shows current/next map and time remaining for normal game modes. 
 ranked -- shows current/next map and time remaining for ranked.
 changeCommand -- changes initial symbol for commands.
+weather -- gets current 3 hour weather cycle for a certain city
 `
 
 const client = new Client({
