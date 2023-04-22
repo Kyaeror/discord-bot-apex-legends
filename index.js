@@ -118,7 +118,7 @@ client.on(`messageCreate`, async (message) => {
                                                 })
                     
                                                 collector.on(`collect`, (message)=>{
-                                                    if(message.content == `yes`){
+                                                    if(message.content.trim().toLowerCase() == `yes`){
                                                         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_API_KEY}&units=imperial`)
                                                             .then(res=> res.json())
                                                             .then((data)=> {
